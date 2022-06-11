@@ -2,10 +2,10 @@ import React from "react";
 import { ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-const ShoppingCartIcon = () => {
+const ShoppingCartIcon = (props) => {
   return (
     <Link to="/cart">
-      <ShoppingCart />
+      <ShoppingCart sx={{ color: props.color }} />
     </Link>
   );
 };

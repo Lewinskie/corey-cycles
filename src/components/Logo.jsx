@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Links } from "./Links";
 
-const Logo = () => {
-  return <Link to="/">Logo</Link>;
+const Logo = (props) => {
+  return <Links title="Logo" to="/" size="3rem" />;
 };
 
 export default Logo;

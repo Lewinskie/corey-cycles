@@ -1,21 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Container, Item } from "../containers/Grids";
+import { Links } from "./Links";
 
 const NavLinks = (props) => {
   return (
     <Container>
       <Item xs={3} sm={3} md={3} lg={3} xl={3}>
-        <Link to="/shop">Shop</Link>
+        <Links to="/shop" title="Shop" />
       </Item>
       <Item xs={3} sm={3} md={3} lg={3} xl={3}>
-        <Link to="/product:id">Product</Link>
+        <Links to="/product:id" title="Product" />
       </Item>
       <Item xs={3} sm={3} md={3} lg={3} xl={3}>
-        <Link to="/shipping">Shipping</Link>
+        <Links to="/shipping" title="Shipping" />
       </Item>
       <Item xs={3} sm={3} md={3} lg={3} xl={3}>
-        <Link to="/payment">Payment</Link>
+        <Links to="/payment" title="Payment" />
       </Item>
     </Container>
   );

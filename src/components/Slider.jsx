@@ -16,15 +16,27 @@ const Slider = () => {
   };
   return (
     <Container>
-      <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <Item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        height="250px"
+        width="90vw"
+        overflowX="hidden"
+        paddingLeft="2rem"
+        paddingRight="2rem"
+        paddingTop="1rem"
+      >
         <Slide {...settings}>
-          <ImageWrapper
-            width="100vw"
-            flex="flex"
-            height="200px"
-            center="center"
-          >
-            <Img src="/photos/yamaha.png" height="200px" objectFit="contain" />
+          <ImageWrapper width="100%" flex="flex" height="200px" center="center">
+            <Img
+              src="/photos/yamaha.png"
+              height="200px"
+              objectFit="contain"
+              maxWidth="500px"
+            />
           </ImageWrapper>
           <ImageWrapper
             width="100vw"

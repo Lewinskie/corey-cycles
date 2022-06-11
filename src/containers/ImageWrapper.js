@@ -7,6 +7,7 @@ export const ImageWrapper = (props) => {
         display: props.flex,
         alignItems: props.center,
         justifyContent: props.center,
+        background: props.background,
       }}
     >
       {props.children}

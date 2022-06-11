@@ -6,10 +6,16 @@ export const ShopNowButton = (props) => {
       style={{
         display: props.flex,
         alignItem: props.center,
-        justifyContent: props.center,
+        justifyContent: props.justify,
+        alignItems: props.align,
       }}
     >
-      <Button variant={props.variant}>{props.title}</Button>
+      <Button
+        variant={props.variant}
+        sx={{ color: props.color, backgroundColor: props.background }}
+      >
+        {props.title}
+      </Button>
     </div>
   );
 };

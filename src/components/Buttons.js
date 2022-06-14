@@ -8,11 +8,22 @@ export const ShopNowButton = (props) => {
         alignItem: props.center,
         justifyContent: props.justify,
         alignItems: props.align,
+        margin: props.margin,
+        marginTop: props.marginTop,
+        marginBottom: props.marginBottom,
       }}
     >
       <Button
         variant={props.variant}
-        sx={{ color: props.color, backgroundColor: props.background }}
+        sx={{
+          color: props.color,
+          backgroundColor: props.background,
+          width: props.width,
+          height: props.height,
+        }}
+        size={props.size}
+        onClick={props.onClick}
+        type={props.type}
       >
         {props.title}
       </Button>

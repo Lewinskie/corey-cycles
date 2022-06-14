@@ -17,6 +17,7 @@ const Hero = () => {
         flex="flex"
         justify="center"
         align="center"
+        marginTop="2rem"
       >
         <Head color="#053886" />
       </Item>
@@ -58,7 +59,6 @@ const Hero = () => {
         xl={12}
         height="240px"
         value="3"
-        border="solid 1px gray"
         backdropFilter={`blur(${2}px)`}
       >
         <Slider />

@@ -6,13 +6,13 @@ export const Links = (props) => {
     <Link
       to={props.to}
       style={{
-        color: "#05386b",
-        textDecoration: "none",
+        color: props.color,
+        textDecoration: props.decoration,
       }}
     >
       <Typography
         variant="body"
-        style={{ fontWeight: "bold", fontSize: props.size }}
+        style={{ fontWeight: props.weight, fontSize: props.size }}
       >
         {props.title}
       </Typography>

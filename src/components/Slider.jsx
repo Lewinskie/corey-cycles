@@ -6,6 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { Container, Item } from "../containers/Grids";
 
 const Slider = () => {
+  const images = [
+    { src: "/photos/yamaha.png" },
+    { src: "/photos/helmet.png" },
+    { src: "/photos/helmet.png" },
+    { src: "/photos/repsol.png" },
+  ];
   const settings = {
     infinite: true,
     speed: 1000,
@@ -30,30 +36,23 @@ const Slider = () => {
         paddingTop="1rem"
       >
         <Slide {...settings}>
-          <ImageWrapper width="100%" flex="flex" height="200px" center="center">
-            <Img
-              src="/photos/yamaha.png"
+          {images.map((image) => (
+            <ImageWrapper
+              width="100%"
+              flex="flex"
               height="200px"
-              objectFit="contain"
-              maxWidth="500px"
-            />
-          </ImageWrapper>
-          <ImageWrapper
-            width="100vw"
-            flex="flex"
-            height="200px"
-            center="center"
-          >
-            <Img src="/photos/helmet.png" height="200px" objectFit="contain" />
-          </ImageWrapper>
-          <ImageWrapper
-            width="100vw"
-            flex="flex"
-            height="200px"
-            center="center"
-          >
-            <Img src="/photos/repsol.png" height="200px" objectFit="contain" />
-          </ImageWrapper>
+              align="center"
+              justify="center"
+              key={image.src}
+            >
+              <Img
+                src={image.src}
+                height="200px"
+                objectFit="contain"
+                maxWidth="500px"
+              />
+            </ImageWrapper>
+          ))}
         </Slide>
       </Item>
     </Container>

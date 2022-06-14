@@ -4,41 +4,48 @@ import { Helmet } from "react-helmet";
 import { Container, Item } from "../containers/Grids";
 import FeaturedProducts from "../components/FeaturedProducts";
 import Newsletter from "../components/Newsletter";
-import HotDeals from "../components/HotDeals";
 import AboutShop from "../components/AboutShop";
 import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <Container spacing="2">
+      <Container>
         <Item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Hero />
         </Item>
 
-        {/* <Item
+        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <FeaturedProducts />
+        </Item>
+        <Item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
-          height="1px"
-          marginTop="2rem"
-          boxShadow="1px 1px 1px #05386b"
-        /> */}
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
-          <FeaturedProducts />
-        </Item>
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+          background="#05386B"
+          flex="flex"
+          align="center"
+          justify="center"
+        >
           <Newsletter />
         </Item>
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
-          <HotDeals />
-        </Item>
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+
+        <Item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          background="#fff"
+          flex="flex"
+          align="center"
+          justify="center"
+        >
           <AboutShop />
         </Item>
       </Container>

@@ -11,10 +11,11 @@ import Payment from "./pages/Payment";
 import NotFound from "./pages/NotFound";
 import BottomNav from "./components/BottomNav";
 import { Container, Item } from "./containers/Grids";
+import Categories from "./pages/Categories";
 
 function App() {
   return (
-    <Container spacing="2" background="#5cdb95" position="relative">
+    <Container background="#F0ECE9" position="relative">
       <Item
         xs={12}
         sm={12}
@@ -24,8 +25,8 @@ function App() {
         position="sticky"
         top="0"
         zIndex={1}
-        background="#5cdb95"
-        boxShadow="1px 1px 1px #379683"
+        background="#F0ECE9"
+        boxShadow="0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)"
         paddingBottom="0.5rem"
       >
         <Navbar />
@@ -35,14 +36,25 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/product:id" element={<Product />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/products/:id" element={<Categories />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Item>
-      <Item xs={12} sm={12} md={12} lg={12} xl={12} height="900rem">
+      <Item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        background="black"
+        flex="flex"
+        align="center"
+        justify="center"
+      >
         <BottomNav />
       </Item>
     </Container>

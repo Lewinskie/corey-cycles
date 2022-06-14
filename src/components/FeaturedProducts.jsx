@@ -7,15 +7,29 @@ import { useSelector } from "react-redux";
 const FeaturedProducts = () => {
   const products = useSelector((state) => state.products);
   return (
-    <div>
-      <Text title="Featured Products" variant="h3" color="#edf5e1" />
+    <div
+      style={{
+        background: "#CECFCF",
+        padding: "2rem",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Text
+        title="Featured Products"
+        variant="h3"
+        color="#05386b"
+        marginBottom="2rem"
+        marginTop="2rem"
+      />
 
       <Container spacing={3}>
         {products.map(
           (product) =>
             product.featured && (
-              <Item xs={4} sm={4} md={4} lg={4} xl={4}>
-                <ProductCard key={product.id} product={product} />
+              <Item xs={12} sm={6} md={4} lg={4} xl={4} key={product.id}>
+                <ProductCard product={product} />
               </Item>
             )
         )}

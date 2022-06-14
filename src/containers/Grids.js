@@ -12,6 +12,7 @@ export const Container = ({
   radius,
   padding,
   boxShadow,
+  boxSizing,
 }) => {
   return (
     <Grid
@@ -30,6 +31,7 @@ export const Container = ({
         borderRadius: radius,
         padding: padding,
         boxShadow: boxShadow,
+        boxSizing:boxSizing
       }}
     >
       {children}
@@ -67,6 +69,7 @@ export const Item = ({
   paddingTop,
   backdropFilter,
   radius,
+  column,
 }) => {
   return (
     <Grid
@@ -80,7 +83,7 @@ export const Item = ({
         display: flex,
         alignItems: align,
         justifyContent: justify,
-        flexDirection: row,
+        flexDirection: row || column,
         height: height,
         padding: padding,
         margin: margin,

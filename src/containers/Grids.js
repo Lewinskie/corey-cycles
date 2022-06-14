@@ -13,6 +13,10 @@ export const Container = ({
   padding,
   boxShadow,
   boxSizing,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
 }) => {
   return (
     <Grid
@@ -31,7 +35,11 @@ export const Container = ({
         borderRadius: radius,
         padding: padding,
         boxShadow: boxShadow,
-        boxSizing:boxSizing
+        boxSizing: boxSizing,
+        paddingTop: paddingTop,
+        paddingRight: paddingRight,
+        paddingBottom: paddingBottom,
+        paddingLeft: paddingLeft,
       }}
     >
       {children}
@@ -58,6 +66,8 @@ export const Item = ({
   borderTop,
   marginTop,
   marginBottom,
+  marginLeft,
+  marginRight,
   position,
   top,
   zIndex,
@@ -92,6 +102,8 @@ export const Item = ({
         borderTop: borderTop,
         marginTop: marginTop,
         marginBottom: marginBottom,
+        marginLeft: marginLeft,
+        marginRight: marginRight,
         position: position,
         top: top,
         zIndex: zIndex,

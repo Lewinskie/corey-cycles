@@ -19,6 +19,7 @@ export const SearchInput = (props) => {
         size={props.size}
         background={props.background}
         style={{ border: props.border, borderRadius: props.radius }}
+        
       />
     </div>
   );

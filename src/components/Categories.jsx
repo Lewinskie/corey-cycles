@@ -39,6 +39,9 @@ const Categories = (props) => {
     slidesToShow: 3,
     autoplay: true,
     dots: true,
+    // fade: true,
+    arrows: false,
+    padding: "0.5rem",
     responsive: [
       { breakpoint: 760, settings: { slidesToShow: 2 } },
       { breakpoint: 550, settings: { slidesToShow: 1 } },
@@ -77,7 +80,7 @@ const Categories = (props) => {
           variant="subtitle"
           color="grey"
           marginTop="1rem"
-          marginBottom="1rem"
+          // marginBottom="1rem"
         />
       </Item>
       <Item
@@ -86,17 +89,32 @@ const Categories = (props) => {
         md={12}
         lg={12}
         xl={12}
+        marginTop="2rem"
+        marginBottom="2rem"
         height="250px"
         width="90vw"
-        overflowX="hidden"
-        paddingLeft="2rem"
-        paddingRight="2rem"
-        paddingTop="1rem"
       >
         <Slide {...settings}>
           {uniqueCategories.map((category, index) => (
-            <Item xs={12} sm={12} md={12} lg={12} xl={12} key={index}>
-              <Link to={`/products/${category}`} key={index}>
+            <Link to={`/products/${category}`} key={index}>
+              <Item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                flex="flex"
+                column="column"
+                boxShadow="0px 0px 5px rgba(0, 0, 0, 0.3)"
+                radius="1rem"
+                padding="0.5rem 0.5rem 0.5rem 0.5rem"
+                marginTop="0.5rem"
+                marginBottom="0.5rem"
+                marginLeft="0.5rem"
+                marginRight="0.5rem"
+                align="center"
+                justify="center"
+              >
                 <ImageWrapper
                   height="150px"
                   flex="flex"
@@ -105,6 +123,7 @@ const Categories = (props) => {
                   width="100%"
                   paddingLeft="1rem"
                   paddingRight="1rem"
+                  paddingTop="1rem"
                 >
                   <Img
                     src={categoryImages[index].image}
@@ -114,9 +133,16 @@ const Categories = (props) => {
                     maxWidth="100%"
                   />
                 </ImageWrapper>
-                <Text title={category} variant="h5" color="grey" />
-              </Link>
-            </Item>
+                <Text
+                  title={category.toUpperCase()}
+                  variant="h6"
+                  color="#053886"
+                  underline="none"
+                  marginTop="0.5rem"
+                  marginBottom="0.5rem"
+                />
+              </Item>
+            </Link>
           ))}
         </Slide>
       </Item>

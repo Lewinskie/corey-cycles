@@ -77,6 +77,7 @@ const Newsletter = () => {
             color={text.color}
             marginBottom={text.marginBottom}
             marginTop={text.marginTop}
+            key={text.title}
           />
         ))}
       </Item>

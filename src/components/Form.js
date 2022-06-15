@@ -5,7 +5,7 @@ import { ShopNowButton } from "./Buttons";
 export const Form = (props) => {
   return (
     <Container spacing={props.spacing}>
-      {props.inputs.map((item) =>
+      {props.inputs.map((item, index) =>
         item.name === "text" ? (
           <Item
             xs={item.xs}
@@ -13,6 +13,7 @@ export const Form = (props) => {
             md={item.md}
             lg={item.lg}
             xl={item.xl}
+            key={index}
           >
             <TextField
               placeholder={item.placeholder}
@@ -34,6 +35,7 @@ export const Form = (props) => {
             xl={item.xl}
             height={item.height}
             width={item.width}
+            key={index}
           >
             <ShopNowButton
               key={item.name}

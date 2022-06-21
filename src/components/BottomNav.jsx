@@ -42,16 +42,11 @@ const BottomNav = () => {
         <NavLinks decoration="underline" color="#fff" />
       </Item>
       <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
         flex="flex"
         align="center"
         justify="center"
         marginBottom="2rem"
-        marginTop='1rem'
+        marginTop="1rem"
       >
         <Copyright />
       </Item>

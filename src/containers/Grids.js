@@ -17,6 +17,9 @@ export const Container = ({
   paddingRight,
   paddingBottom,
   paddingLeft,
+  backgroundSize,
+  backgroundPosition,
+  hoverBackground,
 }) => {
   return (
     <Grid
@@ -24,12 +27,13 @@ export const Container = ({
       spacing={spacing}
       style={{
         background: background,
+        // "hover": { background: hoverBackground },
         minHeight: height,
         width: width,
         backgroundImage: `url(${backgroundUrl})`,
-        backgroundSize: "cover",
+        backgroundSize: backgroundSize,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: backgroundPosition,
         rowSpacing: rowSpacing,
         columnSpacing: columnSpacing,
         borderRadius: radius,
@@ -40,6 +44,7 @@ export const Container = ({
         paddingRight: paddingRight,
         paddingBottom: paddingBottom,
         paddingLeft: paddingLeft,
+        //hover styles
       }}
     >
       {children}
@@ -59,6 +64,7 @@ export const Item = ({
   justify,
   row,
   height,
+  width,
   padding,
   margin,
   boxShadow,
@@ -80,21 +86,29 @@ export const Item = ({
   backdropFilter,
   radius,
   column,
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat,
+  backgroundUrl,
+  className,
+  // hoverColor,
 }) => {
   return (
     <Grid
       item
-      xs={xs}
-      sm={sm}
-      md={md}
-      lg={lg}
-      xl={xl}
+      xs={xs || 12}
+      sm={sm || 12}
+      md={md || 12}
+      lg={lg || 12}
+      xl={xl || 12}
+      className={className}
       style={{
         display: flex,
         alignItems: align,
         justifyContent: justify,
         flexDirection: row || column,
         height: height,
+        width: width,
         padding: padding,
         margin: margin,
         boxShadow: boxShadow,
@@ -115,6 +129,10 @@ export const Item = ({
         paddingBottom: paddingBottom,
         backdropFilter: backdropFilter,
         borderRadius: radius,
+        backgroundImage: `url(${backgroundUrl})`,
+        backgroundSize: backgroundSize,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: backgroundPosition,
       }}
     >
       {children}

@@ -14,38 +14,18 @@ const Home = () => {
         <title>Home</title>
       </Helmet>
       <Container>
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Item>
           <Hero />
         </Item>
 
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Item>
           <FeaturedProducts />
         </Item>
-        <Item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          background="#05386B"
-          flex="flex"
-          align="center"
-          justify="center"
-        >
+        <Item background="#05386B" flex="flex" align="center" justify="center">
           <Newsletter />
         </Item>
 
-        <Item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          background="#fff"
-          flex="flex"
-          align="center"
-          justify="center"
-        >
+        <Item background="#fff" flex="flex" align="center" justify="center">
           <AboutShop />
         </Item>
       </Container>

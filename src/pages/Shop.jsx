@@ -15,14 +15,16 @@ const Shop = () => {
     state.products.map((product) => product.category)
   );
   console.log(categories);
+
   const [products, setProducts] = useState([]);
   const state = useSelector((state) => state.products);
   useEffect(() => {
     setProducts(state);
-  }, []);
+  }, [state]);
 
   const [page, setPage] = useState(1);
-  const [itemsPerPage] = useState(2);
+
+  const [itemsPerPage] = useState(8);
 
   //get current products
   const last = page * itemsPerPage;
@@ -33,28 +35,21 @@ const Shop = () => {
     setPage(pageNumber);
     console.log(pageNumber);
   };
+  const style = {
+    radius: "0.5rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+    paddingLeft: "0.5rem",
+    paddingRight: "0.5rem",
+    boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)",
+  };
 
   return (
-    <Container>
-      <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        flex="flex"
-        align="center"
-        justify="center"
-        marginTop="4rem"
-      >
+    <Container background="#fff">
+      <Item flex="flex" align="center" justify="center" marginTop="4rem">
         <Text title="Corey Cycles & Co." variant="h3" color="#053886" />
       </Item>
       <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
         flex="flex"
         align="center"
         justify="center"
@@ -65,7 +60,7 @@ const Shop = () => {
         <SearchInput size="small" placeholder="Search" />
       </Item>
 
-      <Item xs={12} sm={12} md={12} lg={12} xl={12} background="#fff">
+      <Item background="#fff">
         {!categories ? null : <Categories categories={categories} />}
       </Item>
       <Item
@@ -96,31 +91,55 @@ const Shop = () => {
       >
         <Newsletter />
       </Item>
-      <Item xs={6} sm={4} md={4} lg={4} xl={4} background="#fff">
-        <Text title="Header regarding product" variant="h5" color="#053886" />
-        <Text title="Product description" variant="body1" color="#053886" />
+      <Item background="#fff">
+        <Text title="Shop" variant="h5" color="#053886" />
+        <Text
+          title="Find the products that satisfies your needs from our vast collection of products"
+          variant="body1"
+          // color="#053886"
+        />
       </Item>
-      <Item xs={6} sm={8} md={8} lg={8} xl={8}>
-        <Container spacing="6">
+      <Item xs={12} sm={4} md={4} lg={4} xl={4}>
+        {/* <Filter categories={categories} /> */}
+      </Item>
+      <Item
+        paddingTop="1rem"
+        paddingLeft="1rem"
+        paddingRight="1rem"
+        xs={12}
+        sm={8}
+        md={8}
+        lg={8}
+        xl={8}
+      >
+        <Container spacing="10" height="100%" width="100%">
           {!products
             ? null
             : currentProducts.map((product) => (
-                <Item xs={12} sm={6} md={6} lg={4} xl={4} key={product.id}>
+                <Item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  xl={3}
+                  key={product.id}
+                  className="shopProducts"
+                  height="100%"
+                  width="100%"
+                >
                   <ProductCard
+                    style={style}
                     id={product.id}
                     name={product.name}
                     image={product.image}
                     price={product.price}
+                    height="250px"
+                    hoverBackground="black"
                   />
                 </Item>
               ))}
         </Container>
         <Item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
           flex="flex"
           align="center"
           justify="center"

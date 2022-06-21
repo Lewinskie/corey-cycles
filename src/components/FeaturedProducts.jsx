@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const FeaturedProducts = () => {
   const products = useSelector((state) => state.products);
+  console.log(products);
   return (
     <div
       style={{
@@ -29,7 +30,15 @@ const FeaturedProducts = () => {
           (product) =>
             product.featured && (
               <Item xs={12} sm={6} md={4} lg={4} xl={4} key={product.id}>
-                <ProductCard product={product} />
+                <ProductCard
+                  id={product.id}
+                  category={product.category}
+                  featured={product.featured}
+                  image={product.image}
+                  price={product.price}
+                  name={product.name}
+                  quantity={product.quantity}
+                />
               </Item>
             )
         )}

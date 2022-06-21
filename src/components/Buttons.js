@@ -11,6 +11,7 @@ export const ShopNowButton = (props) => {
         margin: props.margin,
         marginTop: props.marginTop,
         marginBottom: props.marginBottom,
+        width: props.width,
       }}
     >
       <Button

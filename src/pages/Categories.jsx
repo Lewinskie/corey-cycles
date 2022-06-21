@@ -13,7 +13,7 @@ const Categories = () => {
 
   return (
     <Container>
-      <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <Item>
         <Text
           title={upperCaseParams + " Category"}
           variant="h3"
@@ -22,7 +22,7 @@ const Categories = () => {
           textAlign="center"
         />
       </Item>
-      <Item xs={12} sm={12} md={12} lg={12} xl={12} flex="flex" padding="2rem">
+      <Item flex="flex" padding="2rem">
         {state.map((item) =>
           item.category === params.id ? (
             <Item
@@ -35,15 +35,7 @@ const Categories = () => {
               key={item.id}
               margin="0.5rem"
             >
-              <Item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
-                width="100%"
-                padding="1rem"
-              >
+              <Item width="100%" padding="1rem">
                 <ImageWrapper
                   height="150px"
                   width="100%"

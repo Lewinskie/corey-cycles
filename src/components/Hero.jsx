@@ -7,31 +7,15 @@ import { ShopNowButton } from "../components/Buttons";
 
 const Hero = () => {
   return (
-    <Container backgroundUrl="/photos/bikebackground.jpg">
-      <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        flex="flex"
-        justify="center"
-        align="center"
-        marginTop="2rem"
-      >
+    <Container
+      backgroundUrl="/photos/bikebackground.jpg"
+      backgroundPosition="center"
+      backgroundSize="cover"
+    >
+      <Item flex="flex" justify="center" align="center" marginTop="2rem">
         <Head color="#053886" />
       </Item>
-      <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        height="3rem"
-        flex="flex"
-        align="center"
-        justify="center"
-      >
+      <Item height="3rem" flex="flex" align="center" justify="center">
         <TypeWriter
           color="#053886"
           variant="body"
@@ -40,7 +24,7 @@ const Hero = () => {
           center="center"
         />
       </Item>
-      <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <Item>
         <ShopNowButton
           title="shop now"
           background="#053886"
@@ -51,16 +35,7 @@ const Hero = () => {
         />
       </Item>
 
-      <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        height="240px"
-        value="3"
-        backdropFilter={`blur(${2}px)`}
-      >
+      <Item height="240px" value="3" backdropFilter={`blur(${2}px)`}>
         <Slider />
       </Item>
     </Container>

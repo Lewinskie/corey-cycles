@@ -23,11 +23,6 @@ const Slider = () => {
   return (
     <Container>
       <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
         height="250px"
         width="90vw"
         overflowX="hidden"

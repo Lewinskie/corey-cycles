@@ -5,40 +5,52 @@ import { ShopNowButton } from "./Buttons";
 import { Text } from "./Text";
 import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({ id, image, name, description, price, featured }) => {
+const ProductCard = ({
+  id,
+  image,
+  name,
+  description,
+  price,
+  featured,
+  style,
+}) => {
   const navigate = useNavigate();
-  const handleClick = () => {
+
+  const handleView = (id) => {
     navigate(`/product/${id}`);
   };
+  const handleAddToCart = () => {};
+  const buttons = [
+    {
+      title: "View",
+      onClick: () => handleView(id),
+      variant: "contained",
+      background: "#05386B",
+    },
+    {
+      title: "Buy",
+      onClick: () => handleAddToCart(),
+      variant: "outlined",
+      color: "#05386B",
+    },
+  ];
   return (
-    <Container
-      background="#edf5e1"
-      radius="0.5rem"
-      paddingTop="0.5rem"
-      paddingBottom="0.5rem"
-      paddingLeft="0.5rem"
-      paddingRight="0.5rem"
-      boxShadow="0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)"
-    >
+    <Container radius={style.radius} boxShadow={style.boxShadow} backgroundUrl={image}>
       {image && (
-        <Item
-          xs={8}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          flex="flex"
-          align="center"
-          justify="center"
-          width="100%"
-        >
-          <ImageWrapper height="200px">
-            <Img src={image} alt={name} height="180px" objectFit="contain" />
+        <Item xs={8} flex="flex" align="center" justify="center" width="100%">
+          <ImageWrapper height="150px">
+            <Img
+              src={image}
+              alt={name}
+              height="150px"
+              objectFit="scale-down"
+              width="100%"
+            />
           </ImageWrapper>
         </Item>
       )}
 
-      <Item xs={4} sm={12} md={12} lg={12} xl={12}>
+      <Item xs={4}>
         {name && <Text title={name} variant="h5" color="#379683" />}
 
         {price && (
@@ -47,22 +59,37 @@ const ProductCard = ({ id, image, name, description, price, featured }) => {
             <Text title={price} variant="h7" color="#05386B" />
           </div>
         )}
-
-        <ShopNowButton
-          title="View"
-          variant="contained"
-          background="#05386B"
-          color=""
-          size="small"
-          marginTop="1rem"
-          marginBottom="1rem"
-          onClick={() => {
-            handleClick(id);
-          }}
-        />
+        <Container>
+          {buttons.map((button, index) => (
+            <Item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={6}
+              xl={6}
+              flex="flex"
+              align="center"
+              justify="center"
+              key={index}
+            >
+              <ShopNowButton
+                title={button.title}
+                variant={button.variant}
+                background={button.background}
+                color={button.color}
+                size="small"
+                marginTop="1rem"
+                marginBottom="1rem"
+                onClick={button.onClick}
+                width="90%"
+              />
+            </Item>
+          ))}
+        </Container>
       </Item>
+
       {description && (
-        <Item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Item>
           <Text title="Description" underline="underline" color="#379683" />
           <Text title={description} color="#05386B" />
         </Item>

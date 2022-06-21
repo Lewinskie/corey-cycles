@@ -50,25 +50,10 @@ const Categories = (props) => {
 
   return (
     <Container padding="2rem">
-      <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        flex="flex"
-        align="center"
-        justify="center"
-        marginTop="4rem"
-      >
+      <Item flex="flex" align="center" justify="center" marginTop="4rem">
         <Text title="Featured Categories" variant="h4" color="#053886" />
       </Item>
       <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
         flex="flex"
         align="center"
         justify="center"
@@ -83,26 +68,11 @@ const Categories = (props) => {
           // marginBottom="1rem"
         />
       </Item>
-      <Item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        marginTop="2rem"
-        marginBottom="2rem"
-        height="250px"
-        width="90vw"
-      >
+      <Item marginTop="2rem" marginBottom="2rem" height="250px" width="90vw">
         <Slide {...settings}>
           {uniqueCategories.map((category, index) => (
             <Link to={`/products/${category}`} key={index}>
               <Item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
                 flex="flex"
                 column="column"
                 boxShadow="0px 0px 5px rgba(0, 0, 0, 0.3)"

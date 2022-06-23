@@ -11,7 +11,6 @@ const Categories = (props) => {
   const { categories } = props;
   //   check for repetations in the category names
   const uniqueCategories = [...new Set(categories)];
-  console.log(uniqueCategories);
   // category images
   const categoryImages = [
     {
@@ -39,7 +38,6 @@ const Categories = (props) => {
     slidesToShow: 3,
     autoplay: true,
     dots: true,
-    // fade: true,
     arrows: false,
     padding: "0.5rem",
     responsive: [
@@ -65,7 +63,6 @@ const Categories = (props) => {
           variant="subtitle"
           color="grey"
           marginTop="1rem"
-          // marginBottom="1rem"
         />
       </Item>
       <Item marginTop="2rem" marginBottom="2rem" height="250px" width="90vw">

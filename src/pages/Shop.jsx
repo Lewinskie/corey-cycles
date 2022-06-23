@@ -14,7 +14,6 @@ const Shop = () => {
   const categories = useSelector((state) =>
     state.products.map((product) => product.category)
   );
-  console.log(categories);
 
   const [products, setProducts] = useState([]);
   const state = useSelector((state) => state.products);
@@ -35,7 +34,7 @@ const Shop = () => {
     setPage(pageNumber);
     console.log(pageNumber);
   };
-  const style = {
+  const styles = {
     radius: "0.5rem",
     paddingTop: "0.5rem",
     paddingBottom: "0.5rem",
@@ -96,7 +95,6 @@ const Shop = () => {
         <Text
           title="Find the products that satisfies your needs from our vast collection of products"
           variant="body1"
-          // color="#053886"
         />
       </Item>
       <Item xs={12} sm={4} md={4} lg={4} xl={4}>
@@ -112,7 +110,7 @@ const Shop = () => {
         lg={8}
         xl={8}
       >
-        <Container spacing="10" height="100%" width="100%">
+        <Container spacing="10" width="100%">
           {!products
             ? null
             : currentProducts.map((product) => (
@@ -123,18 +121,17 @@ const Shop = () => {
                   lg={3}
                   xl={3}
                   key={product.id}
-                  className="shopProducts"
                   height="100%"
                   width="100%"
+                  // transform="perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1)"
                 >
                   <ProductCard
-                    style={style}
+                    styles={styles}
                     id={product.id}
                     name={product.name}
                     image={product.image}
                     price={product.price}
-                    height="250px"
-                    hoverBackground="black"
+                    quantity={product.quantity}
                   />
                 </Item>
               ))}

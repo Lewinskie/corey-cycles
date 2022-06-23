@@ -1,4 +1,6 @@
 import { Button } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { Add, Remove } from "@mui/icons-material";
 
 export const ShopNowButton = (props) => {
   return (
@@ -28,6 +30,21 @@ export const ShopNowButton = (props) => {
       >
         {props.title}
       </Button>
+    </div>
+  );
+};
+export const IconButtons = (props) => {
+  return (
+    <div>
+      {props.title === "Remove" ? (
+        <IconButton onClick={props.onClick}>
+          <Remove />
+        </IconButton>
+      ) : (
+        <IconButton onClick={props.onClick}>
+          <Add />
+        </IconButton>
+      )}
     </div>
   );
 };

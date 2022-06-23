@@ -19,7 +19,7 @@ export const Container = ({
   paddingLeft,
   backgroundSize,
   backgroundPosition,
-  hoverBackground,
+  minHeight,
 }) => {
   return (
     <Grid
@@ -27,8 +27,7 @@ export const Container = ({
       spacing={spacing}
       style={{
         background: background,
-        // "hover": { background: hoverBackground },
-        minHeight: height,
+        height: height,
         width: width,
         backgroundImage: `url(${backgroundUrl})`,
         backgroundSize: backgroundSize,
@@ -44,7 +43,7 @@ export const Container = ({
         paddingRight: paddingRight,
         paddingBottom: paddingBottom,
         paddingLeft: paddingLeft,
-        //hover styles
+        minHeight: minHeight,
       }}
     >
       {children}
@@ -91,7 +90,8 @@ export const Item = ({
   backgroundRepeat,
   backgroundUrl,
   className,
-  // hoverColor,
+  // transform,
+  border,
 }) => {
   return (
     <Grid
@@ -112,6 +112,7 @@ export const Item = ({
         padding: padding,
         margin: margin,
         boxShadow: boxShadow,
+        border: border,
         borderBottom: borderBottom,
         borderTop: borderTop,
         marginTop: marginTop,

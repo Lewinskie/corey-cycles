@@ -4,22 +4,31 @@ import { ImageWrapper, Img } from "../containers/ImageWrapper";
 import { ShopNowButton } from "./Buttons";
 import { Text } from "./Text";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 
-const ProductCard = ({
-  id,
-  image,
-  name,
-  description,
-  price,
-  featured,
-  style,
-}) => {
+const ProductCard = (
+  { id, image, name, description, price, featured, quantity },
+  styles
+) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { radius, boxShadow } = styles;
 
   const handleView = (id) => {
     navigate(`/product/${id}`);
   };
-  const handleAddToCart = () => {};
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: id,
+        name: name,
+        price: price,
+        image: image,
+        quantity: quantity,
+      })
+    );
+  };
   const buttons = [
     {
       title: "View",
@@ -35,7 +44,7 @@ const ProductCard = ({
     },
   ];
   return (
-    <Container radius={style.radius} boxShadow={style.boxShadow} backgroundUrl={image}>
+    <Container boxShadow={boxShadow} radius={radius} backgroundUrl={image}>
       {image && (
         <Item xs={8} flex="flex" align="center" justify="center" width="100%">
           <ImageWrapper height="150px">

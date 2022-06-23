@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 import { Container, Item } from "../containers/Grids";
 import FeaturedProducts from "../components/FeaturedProducts";
@@ -10,9 +10,9 @@ import Hero from "../components/Hero";
 const Home = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Helmet>
+      {/* <Helmet>
         <title>Home</title>
-      </Helmet>
+      </Helmet> */}
       <Container>
         <Item>
           <Hero />

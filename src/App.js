@@ -15,7 +15,7 @@ import Categories from "./pages/Categories";
 
 function App() {
   return (
-    <Container background="#F0ECE9" position="relative">
+    <Container background="#F0ECE9" position="relative" height="fit">
       <Item
         xs={12}
         sm={12}

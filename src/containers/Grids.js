@@ -20,6 +20,7 @@ export const Container = ({
   backgroundSize,
   backgroundPosition,
   minHeight,
+  border,
 }) => {
   return (
     <Grid
@@ -44,6 +45,7 @@ export const Container = ({
         paddingBottom: paddingBottom,
         paddingLeft: paddingLeft,
         minHeight: minHeight,
+        border: border,
       }}
     >
       {children}
@@ -75,6 +77,7 @@ export const Item = ({
   marginRight,
   position,
   top,
+  bottom,
   zIndex,
   background,
   paddingBottom,
@@ -121,6 +124,7 @@ export const Item = ({
         marginRight: marginRight,
         position: position,
         top: top,
+        bottom: bottom,
         zIndex: zIndex,
         background: background,
         overflowX: overflowX,

@@ -25,16 +25,13 @@ const cartSlice = createSlice({
       itemInCart.quantity += 1;
 
       // New price
-
-      const newPrice = Number(itemInCart.price) * Number(itemInCart.quantity);
-      // itemInCart.price = newPrice;
-      console.log(newPrice);
+      const newPrice = Number(itemInCart.price * itemInCart.quantity);
+      itemInCart.price = newPrice;
     },
     decreaseQuantity: (state, action) => {
       const itemInCart = state.find((item) => item.id === action.payload);
       itemInCart.quantity -= 1;
-      const newPrice = Number(itemInCart.price) * Number(itemInCart.quantity);
-      console.log(newPrice);
+      // New price
 
       if (itemInCart.quantity === 0) {
         state.splice(state.indexOf(itemInCart), 1);

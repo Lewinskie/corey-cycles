@@ -12,7 +12,7 @@ const Categories = () => {
     params.id.charAt(0).toUpperCase() + params.id.slice(1);
 
   return (
-    <Container>
+    <Container minHeight="60vh">
       <Item>
         <Text
           title={upperCaseParams + " Category"}

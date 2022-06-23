@@ -1,7 +1,8 @@
 import React from "react";
+import { Container } from "../containers/Grids";
 
 const Payment = () => {
-  return <div>Payment</div>;
+  return <Container minHeight="60vh">Payment</Container>;
 };
 
 export default Payment;

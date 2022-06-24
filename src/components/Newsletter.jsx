@@ -6,7 +6,7 @@ import { Text } from "./Text";
 const Newsletter = () => {
   const inputs = [
     {
-      name: "text",
+     
       type: "text",
       placeholder: "Enter your Name",
       title: "Name",
@@ -19,7 +19,7 @@ const Newsletter = () => {
       color: "#fff",
     },
     {
-      name: "text",
+    
       type: "email",
       placeholder: "Enter your Email",
       title: "Email",
@@ -32,7 +32,7 @@ const Newsletter = () => {
       color: "#fff",
     },
     {
-      name: "button",
+     
       type: "submit",
       value: "Submit",
       title: "Subscribe",

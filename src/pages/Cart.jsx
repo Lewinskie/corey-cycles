@@ -8,6 +8,7 @@ import { ImageWrapper, Img } from "../containers/ImageWrapper";
 import { useDispatch } from "react-redux";
 import { decreaseQuantity, increaseQuantity } from "../redux/slices/cartSlice";
 import Totals from "../components/Totals";
+import { userCart } from "../redux/slices/usersSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ const Cart = () => {
   const goToShop = (e) => {
     navigate("/shop");
   };
+  const goToCheckOut = () => {
+    navigate("/payment");
+    dispatch(userCart({ ItemsInCart: cart.length, TotalCost: total }));
+  };
   //increase quantity
   const increase = (cartItem) => {
     dispatch(increaseQuantity(cartItem));
@@ -36,7 +41,7 @@ const Cart = () => {
   return (
     <Container paddingTop="4rem" minHeight="60vh">
       <Item flex="flex" justify="center" width="100%">
-        <Text title="Shopping Cart" variant="h4" color="1976D2" />
+        <Text title="Shopping Cart" variant="h4" color="#05386B" />
       </Item>
       {cart.length === 0 ? (
         <Item
@@ -101,7 +106,7 @@ const Cart = () => {
                   align="center"
                   justify="center"
                 >
-                  <Text title={cartItem.name} variant="h7" color="#379683" />
+                  <Text title={cartItem.name} variant="h7" color="#05386B" />
                 </Item>
                 <Item
                   xs={3}
@@ -113,7 +118,7 @@ const Cart = () => {
                   align="center"
                   justify="center"
                 >
-                  <Text title={cartItem.price} variant="h7" color="#379683" />
+                  <Text title={cartItem.price} variant="h7" color="#05386B" />
                 </Item>
                 <Item
                   xs={3}
@@ -128,16 +133,18 @@ const Cart = () => {
                   <IconButtons
                     title="Add"
                     onClick={() => increase(cartItem.id)}
+                    color="#05386B"
                   />
 
                   <Text
                     title={cartItem.quantity}
                     variant="h7"
-                    color="#379683"
+                    color="#05386B"
                   />
                   <IconButtons
                     title="Remove"
                     onClick={() => decrease(cartItem.id)}
+                    color="#05386B"
                   />
                 </Item>
               </Container>
@@ -168,6 +175,8 @@ const Cart = () => {
               variant="contained"
               width="100%"
               marginBottom="1.5rem"
+              background="#05386B"
+              onClick={goToCheckOut}
             />
           </Item>
         </Container>

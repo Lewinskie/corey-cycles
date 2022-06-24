@@ -11,10 +11,10 @@ const Navbar = () => {
         <Logo image="/photos/logo.png" />
       </Item>
 
-      <Item xs={8} sm={6} md={5} lg={5} xl={5} flex="flex" align="center">
+      <Item xs={7} sm={6} md={5} lg={5} xl={5} flex="flex" align="center">
         <NavLinks weight="bold" decoration="none" color="#05386b" />
       </Item>
-      <Item xs={1} sm={1} md={1} lg={1} xl={1} flex="flex" align="center">
+      <Item xs={2} sm={1} md={1} lg={1} xl={1} flex="flex" align="center">
         <ShoppingCartIcon color="#05386b" />
       </Item>
     </Container>

@@ -46,7 +46,15 @@ const ProductCard = (
   return (
     <Container boxShadow={boxShadow} radius={radius} backgroundUrl={image}>
       {image && (
-        <Item xs={8} flex="flex" align="center" justify="center" width="100%">
+        <Item
+          xs={8}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
           <ImageWrapper height="150px">
             <Img
               src={image}
@@ -76,22 +84,26 @@ const ProductCard = (
               md={6}
               lg={6}
               xl={6}
-              flex="flex"
-              align="center"
-              justify="center"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
               key={index}
             >
               <ShopNowButton
-                title={button.title}
                 variant={button.variant}
-                background={button.background}
-                color={button.color}
-                size="small"
-                marginTop="1rem"
-                marginBottom="1rem"
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: "1rem",
+                  width: "90%",
+                }}
+                sx={{ backgroundColor: button.background, color: button.color }}
                 onClick={button.onClick}
-                width="90%"
-              />
+                size="small"
+              >
+                {button.title}
+              </ShopNowButton>
             </Item>
           ))}
         </Container>

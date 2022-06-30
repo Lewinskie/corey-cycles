@@ -44,22 +44,31 @@ const Shop = () => {
   };
 
   return (
-    <Container background="#fff">
-      <Item flex="flex" align="center" justify="center" marginTop="4rem">
+    <Container style={{ background: "#fff" }}>
+      <Item
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "4rem",
+        }}
+      >
         <Text title="Corey Cycles & Co." variant="h3" color="#053886" />
       </Item>
       <Item
-        flex="flex"
-        align="center"
-        justify="center"
-        marginTop="2rem"
-        paddingBottom="2rem"
-        borderBottom="1px solid #e6e6e6"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "2rem",
+          paddingBottom: "2rem",
+          borderBottom: "1px solid #e6e6e6",
+        }}
       >
         <SearchInput size="small" placeholder="Search" />
       </Item>
 
-      <Item background="#fff">
+      <Item style={{ background: "#fff" }}>
         {!categories ? null : <Categories categories={categories} />}
       </Item>
       <Item
@@ -68,10 +77,12 @@ const Shop = () => {
         md={3}
         lg={3}
         xl={3}
-        background="#05386B"
-        flex="flex"
-        align="center"
-        justify="center"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#05386B",
+        }}
       >
         <ImageWrapper>
           <Logo image="/photos/logo.png" />
@@ -83,14 +94,16 @@ const Shop = () => {
         md={9}
         lg={9}
         xl={9}
-        background="#05386B"
-        flex="flex"
-        align="center"
-        justify="center"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#05386B",
+        }}
       >
         <Newsletter />
       </Item>
-      <Item background="#fff">
+      <Item style={{ background: "#fff" }}>
         <Text title="Shop" variant="h5" color="#053886" />
         <Text
           title="Find the products that satisfies your needs from our vast collection of products"
@@ -101,9 +114,11 @@ const Shop = () => {
         {/* <Filter categories={categories} /> */}
       </Item>
       <Item
-        paddingTop="1rem"
-        paddingLeft="1rem"
-        paddingRight="1rem"
+        style={{
+          paddingTop: "1rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+        }}
         xs={12}
         sm={8}
         md={8}
@@ -121,8 +136,10 @@ const Shop = () => {
                   lg={3}
                   xl={3}
                   key={product.id}
-                  height="100%"
-                  width="100%"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                  }}
                   // transform="perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1)"
                 >
                   <ProductCard
@@ -137,11 +154,13 @@ const Shop = () => {
               ))}
         </Container>
         <Item
-          flex="flex"
-          align="center"
-          justify="center"
-          marginTop="0.5rem"
-          marginBottom="0.5rem"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "0.5rem",
+            marginBottom: "0.5rem",
+          }}
         >
           <Paginations
             itemsPerPage={itemsPerPage}

@@ -21,11 +21,25 @@ const Home = () => {
         <Item>
           <FeaturedProducts />
         </Item>
-        <Item background="#05386B" flex="flex" align="center" justify="center">
+        <Item
+          style={{
+            background: "#05386B",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Newsletter />
         </Item>
 
-        <Item background="#fff" flex="flex" align="center" justify="center">
+        <Item
+          style={{
+            background: "#fff",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <AboutShop />
         </Item>
       </Container>

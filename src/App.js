@@ -15,19 +15,23 @@ import Categories from "./pages/Categories";
 
 function App() {
   return (
-    <Container background="#F0ECE9" position="relative" height="fit">
+    <Container
+      style={{ background: "#F0ECE9", position: "relative", height: "fit" }}
+    >
       <Item
         xs={12}
         sm={12}
         md={12}
         lg={12}
         xl={12}
-        position="sticky"
-        top="0"
-        zIndex={1}
-        background="#F0ECE9"
-        boxShadow="0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)"
-        paddingBottom="0.5rem"
+        style={{
+          position: "sticky",
+          top: "0",
+          zIndex: 1,
+          background: "#F0ECE9",
+          boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)",
+          paddingBottom: "0.5rem",
+        }}
       >
         <Navbar />
       </Item>
@@ -50,10 +54,12 @@ function App() {
         md={12}
         lg={12}
         xl={12}
-        background="black"
-        flex="flex"
-        align="center"
-        justify="center"
+        style={{
+          background: "black",
+          flex: "flex",
+          align: "center",
+          justify: "center",
+        }}
       >
         <BottomNav />
       </Item>

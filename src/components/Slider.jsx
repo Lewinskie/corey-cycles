@@ -23,12 +23,14 @@ const Slider = () => {
   return (
     <Container>
       <Item
-        height="250px"
-        width="90vw"
-        overflowX="hidden"
-        paddingLeft="2rem"
-        paddingRight="2rem"
-        paddingTop="1rem"
+        style={{
+          height: "250px",
+          width: "90vw",
+          overflowX: "hidden",
+          paddingLeft: "2rem",
+          paddingRight: "2rem",
+          paddingTop: "1rem",
+        }}
       >
         <Slide {...settings}>
           {images.map((image) => (

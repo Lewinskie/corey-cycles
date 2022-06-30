@@ -13,17 +13,19 @@ const Product = () => {
   console.log(product);
 
   return (
-    <Container boxShadow="2px">
+    <Container style={{ boxShadow: "2px" }}>
       <Item
         xs={12}
         sm={12}
         md={8}
         lg={8}
         xl={8}
-        flex="flex"
-        align="center"
-        justify="center"
-        width="100%"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}
       >
         <ImageWrapper height="450px" width="100%">
           <Img

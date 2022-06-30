@@ -1,40 +1,6 @@
-export const ImageWrapper = (props) => {
-  return (
-    <div
-      style={{
-        height: props.height,
-        width: props.width,
-        display: props.flex,
-        alignItems: props.align,
-        justifyContent: props.justify,
-        background: props.background,
-        paddingRight: props.paddingRight,
-        paddingLeft: props.paddingLeft,
-        paddingTop: props.paddingTop,
-        paddingBottom: props.paddingBottom,
-        marginRight: props.marginRight,
-        marginLeft: props.marginLeft,
-        marginTop: props.marginTop,
-        marginBottom: props.marginBottom,
-      }}
-    >
-      {props.children}
-    </div>
-  );
+export const ImageWrapper = ({ children, ...rest }) => {
+  return <div {...rest}>{children}</div>;
 };
-export const Img = (props) => {
-  return (
-    <img
-      src={props.src}
-      style={{
-        objectFit: props.objectFit,
-        width: props.width,
-        height: props.height,
-        borderRadius: props.radius,
-        blur: props.blur,
-        maxWidth: props.maxWidth,
-      }}
-      alt={props.alt}
-    />
-  );
+export const Img = ({ alt, ...rest }) => {
+  return <img alt={alt} {...rest} />;
 };

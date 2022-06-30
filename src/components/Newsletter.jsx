@@ -6,7 +6,6 @@ import { Text } from "./Text";
 const Newsletter = () => {
   const inputs = [
     {
-     
       type: "text",
       placeholder: "Enter your Name",
       title: "Name",
@@ -16,10 +15,9 @@ const Newsletter = () => {
       lg: 12,
       xl: 12,
       variant: "outlined",
-      color: "#fff",
+      style: { color: "#fff" },
     },
     {
-    
       type: "email",
       placeholder: "Enter your Email",
       title: "Email",
@@ -29,10 +27,9 @@ const Newsletter = () => {
       lg: 12,
       xl: 12,
       variant: "outlined",
-      color: "#fff",
+      style: { color: "#fff" },
     },
     {
-     
       type: "submit",
       value: "Submit",
       title: "Subscribe",
@@ -42,13 +39,10 @@ const Newsletter = () => {
       lg: 12,
       xl: 12,
       variant: "contained",
-      color: "#05386B",
-      background: "#F0ECE9",
-      flex: "flex",
-      align: "center",
-      justify: "center",
-      height: "100%",
-      width: "100%",
+      style: {
+        backgroundColor: "#F0ECE9",
+        color: "#053886",
+      },
     },
   ];
 
@@ -68,7 +62,10 @@ const Newsletter = () => {
     },
   ];
   return (
-    <Container spacing={6} paddingTop="2rem" paddingBottom="2rem" width="90%">
+    <Container
+      spacing={6}
+      style={{ paddingTop: "2rem", paddingBottom: "2rem", width: "90%" }}
+    >
       <Item xs={12} sm={12} md={8} lg={8} xl={8}>
         {text.map((text) => (
           <Text
@@ -88,9 +85,11 @@ const Newsletter = () => {
         md={4}
         lg={4}
         xl={4}
-        flex="flex"
-        align="center"
-        justify="center"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         <Form inputs={inputs} size="small" spacing="9" />
       </Item>

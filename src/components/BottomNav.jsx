@@ -14,17 +14,18 @@ const BottomNav = () => {
         md={4}
         lg={4}
         xl={4}
-        flex="flex"
-        align="center"
-        justify="center"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <ImageWrapper height="100px">
+        <ImageWrapper style={{ height: "100px" }}>
           <Link to="/">
             <Img
               src="/photos/logo.png"
               alt="logo"
-              height="100%"
-              objectFit="contain"
+              style={{ height: "100%", objectFit: "contain" }}
             />
           </Link>
         </ImageWrapper>
@@ -35,18 +36,22 @@ const BottomNav = () => {
         md={8}
         lg={8}
         xl={8}
-        flex="flex"
-        align="center"
-        justify="center"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         <NavLinks decoration="underline" color="#fff" />
       </Item>
       <Item
-        flex="flex"
-        align="center"
-        justify="center"
-        marginBottom="2rem"
-        marginTop="1rem"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "1rem",
+          marginBottom: "2rem",
+        }}
       >
         <Copyright />
       </Item>

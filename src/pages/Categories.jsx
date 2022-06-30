@@ -12,7 +12,7 @@ const Categories = () => {
     params.id.charAt(0).toUpperCase() + params.id.slice(1);
 
   return (
-    <Container minHeight="60vh">
+    <Container style={{ minHeight: "60vh" }}>
       <Item>
         <Text
           title={upperCaseParams + " Category"}
@@ -22,7 +22,7 @@ const Categories = () => {
           textAlign="center"
         />
       </Item>
-      <Item flex="flex" padding="2rem">
+      <Item style={{ display: "flex", padding: "2rem" }}>
         {state.map((item) =>
           item.category === params.id ? (
             <Item
@@ -31,11 +31,13 @@ const Categories = () => {
               md={4}
               lg={3}
               xl={3}
-              boxShadow="0px 0px 10px rgba(0, 0, 0, 0.3)"
+              style={{
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
+                margin: "0.5rem",
+              }}
               key={item.id}
-              margin="0.5rem"
             >
-              <Item width="100%" padding="1rem">
+              <Item style={{ width: "100%", padding: "1rem" }}>
                 <ImageWrapper
                   height="150px"
                   width="100%"

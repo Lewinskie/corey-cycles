@@ -10,17 +10,21 @@ const Totals = (props) => {
   ];
   return (
     <Container
-      border="solid 0.2px rgba(0, 0, 0, 0.1)"
-      height="10rem"
-      radius="0.5rem"
+      style={{
+        border: "solid 0.2px rgba(0, 0, 0, 0.1)",
+        height: "10rem",
+        borderRadius: "0.5rem",
+      }}
     >
       {titles.map((item, index) => (
         <Item
           key={index}
-          flex="flex"
-          align="center"
-          justify="center"
-          column="column"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
         >
           <Text title={item.title} color="#05386B" />
           <Line
@@ -32,7 +36,7 @@ const Totals = (props) => {
             height="3px"
           />
 
-          <Text title={item.content} color='red' />
+          <Text title={item.content} color="red" />
         </Item>
       ))}
     </Container>

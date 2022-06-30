@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { ShopNowButton } from "../components/Buttons";
 import PersonalInfo from "../components/PersonalInfo";
 import { Container, Item } from "../containers/Grids";
-import { UserFields } from "../components/FieldsData";
+
 import { useDispatch } from "react-redux";
 import { userDetails } from "../redux/slices/usersSlice";
+import Test from "../components/Test";
 
 const Payment = () => {
+  const handleClick = () => {
+    console.log("clicked");
+  };
   const dispatch = useDispatch();
   const [personalInfo, setPersonalInfo] = useState(true);
   const [paymentInfo, setPaymentInfo] = useState([]);
@@ -44,22 +48,23 @@ const Payment = () => {
   //   // setValues(e.target.value);
   //   console.log(values);
   // };
-  console.log(values)
+  console.log(values);
   return (
     <Container minHeight="60vh" paddingLeft="2rem" paddingRight="2rem">
       <Item flex="flex" justify="space-between" align="center">
         {headings.map((heading, index) => (
           <ShopNowButton
-            title={heading.title}
+            // title={heading.title}
             onClick={() => handleHeading(heading.title)}
             key={index}
-            color="#05386B"
-          />
+            sx={{ color: "#05386B" }}
+          >
+            {heading.title}
+          </ShopNowButton>
         ))}
       </Item>
-      {personalInfo === true && (
+      {/* {personalInfo === true && (
         <PersonalInfo
-          fields={UserFields}
           title="User Details"
           color="#05386B"
           variant="h5"
@@ -77,7 +82,20 @@ const Payment = () => {
         />
       )}
       {paymentInfo === true && <Item> payment info</Item>}
-      {checkoutInfo === true && checkoutInfo === true && <Item></Item>}
+      {checkoutInfo === true && checkoutInfo === true && <Item></Item>} */}
+      {/* <Item>
+        <Test
+          style={{
+            color: "white",
+            background: "black",
+            "&&:hover": { background: "pink" },
+          }}
+          onClick={handleClick}
+          variant="contained"
+        >
+          open
+        </Test> */}
+      {/* </Item> */}
     </Container>
   );
 };

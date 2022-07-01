@@ -26,7 +26,7 @@ const Totals = (props) => {
             flexDirection: "column",
           }}
         >
-          <Text title={item.title} color="#05386B" />
+          <Text style={{ color: "#05386B" }}>{item.title}</Text>
           <Line
             width="90%"
             borderBottom="solid 0.2px rgba(0, 0, 0, 0.1)"
@@ -36,7 +36,7 @@ const Totals = (props) => {
             height="3px"
           />
 
-          <Text title={item.content} color="red" />
+          <Text style={{ color: "red" }}>{item.content}</Text>
         </Item>
       ))}
     </Container>

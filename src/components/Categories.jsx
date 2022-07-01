@@ -56,7 +56,9 @@ const Categories = (props) => {
           marginTop: "4rem",
         }}
       >
-        <Text title="Featured Categories" variant="h4" color="#053886" />
+        <Text title="" variant="h4" style={{ color: "#053886" }}>
+          Featured Categories
+        </Text>
       </Item>
       <Item
         style={{
@@ -68,11 +70,14 @@ const Categories = (props) => {
         }}
       >
         <Text
-          title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis debitis numquam esse necessitatibus mollitia officia aspernatur dolorum error rerum."
+          title=""
           variant="subtitle"
-          color="grey"
-          marginTop="1rem"
-        />
+          style={{ color: "grey", marginTop: "1rem" }}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          perferendis debitis numquam esse necessitatibus mollitia officia
+          aspernatur dolorum error rerum.
+        </Text>
       </Item>
       <Item
         style={{
@@ -123,13 +128,16 @@ const Categories = (props) => {
                   />
                 </ImageWrapper>
                 <Text
-                  title={category.toUpperCase()}
                   variant="h6"
-                  color="#053886"
-                  underline="none"
-                  marginTop="0.5rem"
-                  marginBottom="0.5rem"
-                />
+                  style={{
+                    color: "#053886",
+                    textDecoration: "none",
+                    marginTop: "0.5rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {category.toUpperCase()}
+                </Text>
               </Item>
             </Link>
           ))}

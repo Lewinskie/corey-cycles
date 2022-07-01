@@ -3,10 +3,9 @@ import { Text } from "./Text";
 
 const Copyright = () => {
   return (
-    <Text
-      title="Corey Cycles & Co. All Rights Reserved 2022 &nbsp;&copy;"
-      color="#fff"
-    />
+    <Text title="" style={{ color: "#CFF4D2" }}>
+      Corey Cycles & Co. All Rights Reserved 2022 &nbsp;&copy;
+    </Text>
   );
 };
 

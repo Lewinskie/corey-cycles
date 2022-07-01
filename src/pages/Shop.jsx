@@ -9,6 +9,7 @@ import Logo from "../components/Logo";
 import { ImageWrapper } from "../containers/ImageWrapper";
 import ProductCard from "../components/ProductCard";
 import Paginations from "../components/Paginations";
+import { Line } from "../components/Line";
 
 const Shop = () => {
   const categories = useSelector((state) =>
@@ -34,17 +35,9 @@ const Shop = () => {
     setPage(pageNumber);
     console.log(pageNumber);
   };
-  const styles = {
-    radius: "0.5rem",
-    paddingTop: "0.5rem",
-    paddingBottom: "0.5rem",
-    paddingLeft: "0.5rem",
-    paddingRight: "0.5rem",
-    boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)",
-  };
 
   return (
-    <Container style={{ background: "#fff" }}>
+    <Container style={{ background: "#CFF4D2", width: "100%" }}>
       <Item
         style={{
           display: "flex",
@@ -68,7 +61,9 @@ const Shop = () => {
         <SearchInput size="small" placeholder="Search" />
       </Item>
 
-      <Item style={{ background: "#fff" }}>
+      <Item
+        style={{ background: "linear-gradient(to bottom, #CFF4D2,#56C596)" }}
+      >
         {!categories ? null : <Categories categories={categories} />}
       </Item>
       <Item
@@ -81,7 +76,7 @@ const Shop = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#05386B",
+          background: "#329D9C",
         }}
       >
         <ImageWrapper>
@@ -98,61 +93,102 @@ const Shop = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#05386B",
+          background: "#329D9C",
         }}
       >
         <Newsletter />
       </Item>
-      <Item style={{ background: "#fff" }}>
-        <Text title="Shop" variant="h5" color="#053886" />
-        <Text
-          title="Find the products that satisfies your needs from our vast collection of products"
-          variant="body1"
-        />
-      </Item>
-      <Item xs={12} sm={4} md={4} lg={4} xl={4}>
-        {/* <Filter categories={categories} /> */}
-      </Item>
+
       <Item
         style={{
-          paddingTop: "1rem",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
+          background: "linear-gradient(to bottom, black, #0B1B27)",
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          padding: "2rem",
         }}
-        xs={12}
-        sm={8}
-        md={8}
-        lg={8}
-        xl={8}
       >
-        <Container spacing="10" width="100%">
-          {!products
-            ? null
-            : currentProducts.map((product) => (
-                <Item
-                  xs={12}
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  xl={3}
-                  key={product.id}
+        <Item
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "1rem",
+            marginTop: "1rem",
+          }}
+        >
+          <Text variant="h4" style={{ color: "#F0ECE9" }}>
+            Shop
+          </Text>
+        </Item>
+        <Item
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text variant="h7" style={{ color: "gray" }}>
+            Find the products that satisfies your needs from our vast collection
+            of products
+          </Text>
+        </Item>
+        <Item>
+          {/* <Filter categories={categories} /> */}
+          <Text variant="h6" style={{ color: "#053886" }}>
+            filter
+          </Text>
+        </Item>
+      </Item>
+
+      <Item
+        style={{
+          background: "linear-gradient(to bottom, #08131B, black)",
+          padding: "4rem",
+          width: "100%",
+        }}
+      >
+        {!products ? null : (
+          <Container gap={1}>
+            {currentProducts.map((product) => (
+              <Item
+                xs={12}
+                sm={6}
+                md={4}
+                lg={3}
+                xl={3}
+                key={product.id}
+                style={{
+                  borderRadius: "0.5rem",
+                  background: "linear-gradient(to bottom, #133044,#0E2332)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "100%",
+                }}
+              >
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  image={product.image}
+                  price={product.price}
+                  quantity={product.quantity}
+                  btnBackground="#205072"
+                  btnColor="#CFF4D2"
                   style={{
-                    height: "100%",
-                    width: "100%",
+                    borderRadius: "0.5rem",
+                    paddingTop: "0.5rem",
+                    paddingBottom: "0.5rem",
+                    paddingLeft: "0.5rem",
+                    paddingRight: "0.5rem",
+                    boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2)",
                   }}
-                  // transform="perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1)"
-                >
-                  <ProductCard
-                    styles={styles}
-                    id={product.id}
-                    name={product.name}
-                    image={product.image}
-                    price={product.price}
-                    quantity={product.quantity}
-                  />
-                </Item>
-              ))}
-        </Container>
+                />
+              </Item>
+            ))}
+          </Container>
+        )}
+
         <Item
           style={{
             display: "flex",
@@ -160,6 +196,9 @@ const Shop = () => {
             justifyContent: "center",
             marginTop: "0.5rem",
             marginBottom: "0.5rem",
+            background: "#205072",
+            borderRadius: "0.5rem",
+            padding: "0.1rem 0.5rem",
           }}
         >
           <Paginations

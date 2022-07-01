@@ -7,13 +7,21 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
 
-const ProductCard = (
-  { id, image, name, description, price, featured, quantity },
-  styles
-) => {
+const ProductCard = ({
+  id,
+  image,
+  name,
+  description,
+  price,
+  featured,
+  quantity,
+  background,
+  btnBackground,
+  btnColor,
+  ...rest
+}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { radius, boxShadow } = styles;
 
   const handleView = (id) => {
     navigate(`/product/${id}`);
@@ -34,17 +42,18 @@ const ProductCard = (
       title: "View",
       onClick: () => handleView(id),
       variant: "contained",
-      background: "#05386B",
+      background: btnBackground,
+      color: btnColor,
     },
     {
       title: "Buy",
       onClick: () => handleAddToCart(),
       variant: "outlined",
-      color: "#05386B",
+      color: btnColor,
     },
   ];
   return (
-    <Container boxShadow={boxShadow} radius={radius} backgroundUrl={image}>
+    <Container {...rest} style={{ background: background, padding: "0.5rem" }}>
       {image && (
         <Item
           xs={8}
@@ -59,21 +68,40 @@ const ProductCard = (
             <Img
               src={image}
               alt={name}
-              height="150px"
-              objectFit="scale-down"
-              width="100%"
+              style={{
+                height: "150px",
+                objectFit: "scale-down",
+                width: "100%",
+              }}
             />
           </ImageWrapper>
         </Item>
       )}
 
-      <Item xs={4}>
-        {name && <Text title={name} variant="h5" color="#379683" />}
+      <Item
+        xs={4}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+        }}
+      >
+        {name && (
+          <Text title={name} variant="h6" color="#F0ECE9">
+            {name}
+          </Text>
+        )}
 
         {price && (
-          <div style={{ display: "flex" }}>
-            <Text title="Price:&nbsp;" variant="h7" color="#379683" />
-            <Text title={price} variant="h7" color="#05386B" />
+          <div
+            style={{ display: "flex", width: "100%", padding: "0rem 0.5rem" }}
+          >
+            <Text title="" variant="h7" color="#05386B">
+              Price:&nbsp;
+            </Text>
+            <Text title={price} variant="h7" color="#CFF4D2">
+              {price}&nbsp;KES
+            </Text>
           </div>
         )}
         <Container>
@@ -98,7 +126,10 @@ const ProductCard = (
                   marginBottom: "1rem",
                   width: "90%",
                 }}
-                sx={{ backgroundColor: button.background, color: button.color }}
+                sx={{
+                  backgroundColor: button.background,
+                  color: button.color,
+                }}
                 onClick={button.onClick}
                 size="small"
               >
@@ -111,8 +142,12 @@ const ProductCard = (
 
       {description && (
         <Item>
-          <Text title="Description" underline="underline" color="#379683" />
-          <Text title={description} color="#05386B" />
+          <Text title="" underline="underline" color="#379683">
+            Description
+          </Text>
+          <Text title={description} color="#05386B">
+            {description}
+          </Text>
         </Item>
       )}
     </Container>

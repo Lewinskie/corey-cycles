@@ -40,8 +40,8 @@ const Newsletter = () => {
       xl: 12,
       variant: "contained",
       style: {
-        backgroundColor: "#F0ECE9",
-        color: "#053886",
+        background: "linear-gradient(to bottom,#297486, #173951)",
+        color: "#CFF4D2",
       },
     },
   ];
@@ -75,7 +75,9 @@ const Newsletter = () => {
             marginBottom={text.marginBottom}
             marginTop={text.marginTop}
             key={text.title}
-          />
+          >
+            {text.title}
+          </Text>
         ))}
       </Item>
 

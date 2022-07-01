@@ -42,7 +42,7 @@ const BottomNav = () => {
           justifyContent: "center",
         }}
       >
-        <NavLinks decoration="underline" color="#fff" />
+        <NavLinks decoration="underline" color="#CFF4D2" />
       </Item>
       <Item
         style={{

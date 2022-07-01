@@ -43,7 +43,9 @@ const Cart = () => {
       <Item
         style={{ display: "flex", justifyContent: "center", width: "100%" }}
       >
-        <Text title="Shopping Cart" variant="h4" color="#05386B" />
+        <Text title="" variant="h4" style={{ color: "#05386B" }}>
+          Shopping Cart
+        </Text>
       </Item>
       {cart.length === 0 ? (
         <Item
@@ -132,7 +134,9 @@ const Cart = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Text title={cartItem.name} variant="h7" color="#05386B" />
+                  <Text variant="h7" style={{ color: "#05386B" }}>
+                    {cartItem.name}
+                  </Text>
                 </Item>
                 <Item
                   xs={3}
@@ -146,7 +150,9 @@ const Cart = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Text title={cartItem.price} variant="h7" color="#05386B" />
+                  <Text variant="h7" style={{ color: "#05386B" }}>
+                    {cartItem.price}
+                  </Text>
                 </Item>
                 <Item
                   xs={3}
@@ -166,11 +172,9 @@ const Cart = () => {
                     style={{ color: "#05386B" }}
                   />
 
-                  <Text
-                    title={cartItem.quantity}
-                    variant="h7"
-                    color="#05386B"
-                  />
+                  <Text variant="h7" style={{ color: "#05386B" }}>
+                    {cartItem.quantity}
+                  </Text>
                   <IconButtons
                     title="Remove"
                     onClick={() => decrease(cartItem.id)}
@@ -188,31 +192,36 @@ const Cart = () => {
             style={{
               alignItems: "center",
               display: "flex",
-              paddingTop: "1.5rem",
-              paddingBottom: "0.5rem",
-              paddingLeft: "1.5rem",
-              paddingRight: "1.5rem",
               marginTop: "2rem",
               flexDirection: "column",
               justifyContent: "center",
               marginBottom: "2rem",
-              borderRadius: "0.5rem",
-              boxShadow: "0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)",
             }}
           >
-            <Totals totalCost={total} itemsInCart={cart.length} />
-            <ShopNowButton
+            <Container
               style={{
-                marginTop: "1.5rem",
-                width: "100%",
-                marginBottom: "1.5rem",
+                borderRadius: "0.5rem",
+                boxShadow: "0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)",
+                padding: "1rem",
               }}
-              sx={{ backgroundColor: "#05386B" }}
-              variant="contained"
-              onClick={goToCheckOut}
             >
-              checkout
-            </ShopNowButton>
+              <Item>
+                <Totals totalCost={total} itemsInCart={cart.length} />
+              </Item>
+              <Item>
+                <ShopNowButton
+                  style={{
+                    marginTop: "1.5rem",
+                    width: "100%",
+                  }}
+                  sx={{ backgroundColor: "#05386B" }}
+                  variant="contained"
+                  onClick={goToCheckOut}
+                >
+                  checkout
+                </ShopNowButton>
+              </Item>
+            </Container>
           </Item>
         </Container>
       )}

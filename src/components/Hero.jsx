@@ -6,10 +6,16 @@ import Slider from "../components/Slider";
 import { ShopNowButton } from "../components/Buttons";
 
 const Hero = () => {
+  const images = [
+    { src: "/photos/yamaha.png" },
+    { src: "/photos/helmet.png" },
+    { src: "/photos/helmet2.png" },
+    { src: "/photos/repsol.png" },
+  ];
   return (
     <Container
       style={{
-        backgroundUrl: "/photos/bikebackground.jpg",
+        background: `url("/photos/bikebackground.jpg")`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
@@ -22,7 +28,7 @@ const Hero = () => {
           marginTop: "2rem",
         }}
       >
-        <Head color="#053886" />
+        <Head color="#205072" />
       </Item>
       <Item
         style={{
@@ -33,7 +39,7 @@ const Hero = () => {
         }}
       >
         <TypeWriter
-          color="#053886"
+          color="#205072"
           variant="body"
           size="1rem"
           flex="flex"
@@ -47,7 +53,7 @@ const Hero = () => {
         }}
       >
         <ShopNowButton
-          sx={{ background: "#053886", color: "#edf5e1" }}
+          sx={{ background: "#205072", color: "#edf5e1" }}
           variant="contained"
         >
           Shop now
@@ -58,7 +64,7 @@ const Hero = () => {
         value="3"
         style={{ height: "240px", backdropFilter: `blur(${2}px)` }}
       >
-        <Slider />
+        <Slider images={images} />
       </Item>
     </Container>
   );

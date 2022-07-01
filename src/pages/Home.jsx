@@ -18,12 +18,16 @@ const Home = () => {
           <Hero />
         </Item>
 
-        <Item>
+        <Item
+          style={{
+            background: "linear-gradient(to bottom, #7BE495,#329D9C)",
+          }}
+        >
           <FeaturedProducts />
         </Item>
         <Item
           style={{
-            background: "#05386B",
+            background: "linear-gradient(to bottom, #329D9C,#205072)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -34,7 +38,7 @@ const Home = () => {
 
         <Item
           style={{
-            background: "#fff",
+            background: "linear-gradient(to bottom, #205072,black)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

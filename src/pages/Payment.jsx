@@ -5,7 +5,6 @@ import { Container, Item } from "../containers/Grids";
 
 import { useDispatch } from "react-redux";
 import { userDetails } from "../redux/slices/usersSlice";
-import Test from "../components/Test";
 
 const Payment = () => {
   const handleClick = () => {
@@ -50,11 +49,19 @@ const Payment = () => {
   // };
   console.log(values);
   return (
-    <Container minHeight="60vh" paddingLeft="2rem" paddingRight="2rem">
-      <Item flex="flex" justify="space-between" align="center">
+    <Container
+      style={{ minHeight: "60vh", paddingLeft: "2rem", paddingRight: "2rem" }}
+    >
+      <Item
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          height: "2rem",
+          marginTop: "1rem",
+        }}
+      >
         {headings.map((heading, index) => (
           <ShopNowButton
-            // title={heading.title}
             onClick={() => handleHeading(heading.title)}
             key={index}
             sx={{ color: "#05386B" }}
@@ -63,18 +70,20 @@ const Payment = () => {
           </ShopNowButton>
         ))}
       </Item>
-      {/* {personalInfo === true && (
+      {personalInfo === true && (
         <PersonalInfo
           title="User Details"
-          color="#05386B"
-          variant="h5"
-          TextMarginBottom="1rem"
           size="small"
           spacing="6"
-          paddingTop="2rem"
-          paddingBottom="2rem"
-          paddingRight="2rem"
-          paddingLeft="2rem"
+          style={{
+            color: "#05386B",
+            variant: "h5",
+            TextMarginBottom: "1rem",
+            paddingTop: "2rem",
+            paddingBottom: "2rem",
+            paddingRight: "2rem",
+            paddingLeft: "2rem",
+          }}
           onClick={() => handleSave()}
           // onChange={(e) => handleChange(e)}
           value={values}
@@ -82,20 +91,7 @@ const Payment = () => {
         />
       )}
       {paymentInfo === true && <Item> payment info</Item>}
-      {checkoutInfo === true && checkoutInfo === true && <Item></Item>} */}
-      {/* <Item>
-        <Test
-          style={{
-            color: "white",
-            background: "black",
-            "&&:hover": { background: "pink" },
-          }}
-          onClick={handleClick}
-          variant="contained"
-        >
-          open
-        </Test> */}
-      {/* </Item> */}
+      {checkoutInfo === true && checkoutInfo === true && <Item></Item>}
     </Container>
   );
 };

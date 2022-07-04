@@ -9,20 +9,24 @@ const NotFound = () => {
     navigate("/");
   };
   return (
-    <Container style={{ height: "80vh", background: "#fff" }}>
+    <Container
+      style={{
+        height: "80vh",
+      }}
+    >
       <Item
         style={{
-          backgroundUrl: "/photos/error.png",
-          backgroundSize: "auto 100%",
-          backgroundPosition: "center",
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",
           paddingBottom: "4rem",
+          background: "url(/photos/error.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          objectFit: "scale-down",
         }}
       >
         <ShopNowButton
-          // title="Take me home"
           variant="contained"
           style={{ background: "#05386B" }}
           onClick={handleClick}

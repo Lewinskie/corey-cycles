@@ -108,9 +108,9 @@ const Categories = (props) => {
                 <ImageWrapper
                   style={{
                     height: "150px",
-                    flex: "flex",
-                    align: "center",
-                    justify: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     width: "100%",
                     paddingLeft: "1rem",
                     paddingRight: "1rem",

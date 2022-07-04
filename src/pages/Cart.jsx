@@ -39,11 +39,17 @@ const Cart = () => {
     dispatch(decreaseQuantity(cartItem));
   };
   return (
-    <Container style={{ paddingTop: "4rem", minHeight: "60vh" }}>
+    <Container
+      style={{
+        paddingTop: "4rem",
+        minHeight: "60vh",
+        background: "linear-gradient(to bottom, #205072, black)",
+      }}
+    >
       <Item
         style={{ display: "flex", justifyContent: "center", width: "100%" }}
       >
-        <Text title="" variant="h4" style={{ color: "#05386B" }}>
+        <Text title="" variant="h4" style={{ color: "#CFF4D2" }}>
           Shopping Cart
         </Text>
       </Item>
@@ -95,9 +101,9 @@ const Cart = () => {
               <Container
                 key={cartItem.id}
                 style={{
-                  boxShadow: "0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)",
+                  boxShadow: "0 0.1rem 0.5rem 0 rgba(50,157,156,0.75)",
                   marginTop: "0.5rem",
-                  BorderRadius: "0.5rem",
+                  borderRadius: "0.5rem",
                   paddingTop: "0.5rem",
                   paddingBottom: "0.5rem",
                   paddingLeft: "0.5rem",
@@ -134,7 +140,7 @@ const Cart = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Text variant="h7" style={{ color: "#05386B" }}>
+                  <Text variant="h7" style={{ color: "#CFF4D2" }}>
                     {cartItem.name}
                   </Text>
                 </Item>
@@ -150,7 +156,7 @@ const Cart = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Text variant="h7" style={{ color: "#05386B" }}>
+                  <Text variant="h7" style={{ color: "#CFF4D2" }}>
                     {cartItem.price}
                   </Text>
                 </Item>
@@ -169,16 +175,16 @@ const Cart = () => {
                   <IconButtons
                     title="Add"
                     onClick={() => increase(cartItem.id)}
-                    style={{ color: "#05386B" }}
+                    style={{ color: "#CFF4D2" }}
                   />
 
-                  <Text variant="h7" style={{ color: "#05386B" }}>
+                  <Text variant="h7" style={{ color: "#CFF4D2" }}>
                     {cartItem.quantity}
                   </Text>
                   <IconButtons
                     title="Remove"
                     onClick={() => decrease(cartItem.id)}
-                    style={{ color: "#05386B" }}
+                    style={{ color: "#CFF4D2" }}
                   />
                 </Item>
               </Container>
@@ -201,12 +207,16 @@ const Cart = () => {
             <Container
               style={{
                 borderRadius: "0.5rem",
-                boxShadow: "0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 0.1rem 0.5rem 0 rgba(50,157,156,0.75)",
                 padding: "1rem",
               }}
             >
               <Item>
-                <Totals totalCost={total} itemsInCart={cart.length} />
+                <Totals
+                  totalCost={total}
+                  itemsInCart={cart.length}
+                  color="#cff4d2"
+                />
               </Item>
               <Item>
                 <ShopNowButton
